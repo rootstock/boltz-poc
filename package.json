@@ -19,8 +19,8 @@
     "docker:stop": "npm run docker:dev:stop && ./docker/polar/clean.sh",
     "docker:rskj:start": "docker compose -f docker/polar/docker-compose-rsk.yml up -d",
     "docker:rskj:stop": "docker compose -f docker/polar/docker-compose-rsk.yml down",
-    "docker:dev:start": "docker compose -f docker/polar/docker-compose-polar.yml -f docker/polar/docker-compose-rsk.yml -f docker/polar/docker-compose-boltz.yml up -d",
-    "docker:dev:stop": "docker compose -f docker/polar/docker-compose-polar.yml -f docker/polar/docker-compose-rsk.yml -f docker/polar/docker-compose-boltz.yml down",
+    "docker:dev:start": "docker compose -f docker/polar/docker-compose-polar.yml  -f docker/polar/docker-compose-boltz.yml up -d",
+    "docker:dev:stop": "docker compose -f docker/polar/docker-compose-polar.yml  -f docker/polar/docker-compose-boltz.yml down",
     "docker:connect": "./docker/polar/connect.sh"
   }
 }

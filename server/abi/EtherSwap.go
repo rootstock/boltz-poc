@@ -30,7 +30,7 @@ var (
 
 // AbiMetaData contains all meta data concerning the Abi contract.
 var AbiMetaData = &bind.MetaData{
-	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"preimage\",\"type\":\"bytes32\"}],\"name\":\"Claim\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"claimAddress\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"refundAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"}],\"name\":\"Lockup\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"}],\"name\":\"Refund\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"preimage\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"refundAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"}],\"name\":\"claim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"claimAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"refundAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"}],\"name\":\"hashValues\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"claimAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"}],\"name\":\"lock\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"internalType\":\"addresspayable\",\"name\":\"claimAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"prepayAmount\",\"type\":\"uint256\"}],\"name\":\"lockPrepayMinerfee\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"claimAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"}],\"name\":\"refund\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"swaps\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"addresspayable\",\"name\":\"_mocAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_docAddr\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"ChangeRefund\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"preimage\",\"type\":\"bytes32\"}],\"name\":\"Claim\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"preimage\",\"type\":\"bytes32\"}],\"name\":\"ClaimDocViaMint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"claimAddress\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"refundAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"}],\"name\":\"Lockup\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Minted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Minting\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"}],\"name\":\"Refund\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferredDoc\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"preimage\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"refundAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"}],\"name\":\"claim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"preimage\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"refundAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"btcToMint\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"docReceiverAddress\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"leftoverRbtcAddr\",\"type\":\"address\"}],\"name\":\"claimDoCViaMint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"claimAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"refundAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"}],\"name\":\"hashValues\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"claimAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"}],\"name\":\"lock\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"internalType\":\"addresspayable\",\"name\":\"claimAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"prepayAmount\",\"type\":\"uint256\"}],\"name\":\"lockPrepayMinerfee\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"preimageHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"claimAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timelock\",\"type\":\"uint256\"}],\"name\":\"refund\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"swaps\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 }
 
 // AbiABI is the input ABI used to generate the binding from.
@@ -293,6 +293,27 @@ func (_Abi *AbiTransactorSession) Claim(preimage [32]byte, amount *big.Int, refu
 	return _Abi.Contract.Claim(&_Abi.TransactOpts, preimage, amount, refundAddress, timelock)
 }
 
+// ClaimDoCViaMint is a paid mutator transaction binding the contract method 0xa179c70f.
+//
+// Solidity: function claimDoCViaMint(bytes32 preimage, uint256 amount, address refundAddress, uint256 timelock, uint256 btcToMint, address docReceiverAddress, address leftoverRbtcAddr) returns()
+func (_Abi *AbiTransactor) ClaimDoCViaMint(opts *bind.TransactOpts, preimage [32]byte, amount *big.Int, refundAddress common.Address, timelock *big.Int, btcToMint *big.Int, docReceiverAddress common.Address, leftoverRbtcAddr common.Address) (*types.Transaction, error) {
+	return _Abi.contract.Transact(opts, "claimDoCViaMint", preimage, amount, refundAddress, timelock, btcToMint, docReceiverAddress, leftoverRbtcAddr)
+}
+
+// ClaimDoCViaMint is a paid mutator transaction binding the contract method 0xa179c70f.
+//
+// Solidity: function claimDoCViaMint(bytes32 preimage, uint256 amount, address refundAddress, uint256 timelock, uint256 btcToMint, address docReceiverAddress, address leftoverRbtcAddr) returns()
+func (_Abi *AbiSession) ClaimDoCViaMint(preimage [32]byte, amount *big.Int, refundAddress common.Address, timelock *big.Int, btcToMint *big.Int, docReceiverAddress common.Address, leftoverRbtcAddr common.Address) (*types.Transaction, error) {
+	return _Abi.Contract.ClaimDoCViaMint(&_Abi.TransactOpts, preimage, amount, refundAddress, timelock, btcToMint, docReceiverAddress, leftoverRbtcAddr)
+}
+
+// ClaimDoCViaMint is a paid mutator transaction binding the contract method 0xa179c70f.
+//
+// Solidity: function claimDoCViaMint(bytes32 preimage, uint256 amount, address refundAddress, uint256 timelock, uint256 btcToMint, address docReceiverAddress, address leftoverRbtcAddr) returns()
+func (_Abi *AbiTransactorSession) ClaimDoCViaMint(preimage [32]byte, amount *big.Int, refundAddress common.Address, timelock *big.Int, btcToMint *big.Int, docReceiverAddress common.Address, leftoverRbtcAddr common.Address) (*types.Transaction, error) {
+	return _Abi.Contract.ClaimDoCViaMint(&_Abi.TransactOpts, preimage, amount, refundAddress, timelock, btcToMint, docReceiverAddress, leftoverRbtcAddr)
+}
+
 // Lock is a paid mutator transaction binding the contract method 0x0899146b.
 //
 // Solidity: function lock(bytes32 preimageHash, address claimAddress, uint256 timelock) payable returns()
@@ -354,6 +375,140 @@ func (_Abi *AbiSession) Refund(preimageHash [32]byte, amount *big.Int, claimAddr
 // Solidity: function refund(bytes32 preimageHash, uint256 amount, address claimAddress, uint256 timelock) returns()
 func (_Abi *AbiTransactorSession) Refund(preimageHash [32]byte, amount *big.Int, claimAddress common.Address, timelock *big.Int) (*types.Transaction, error) {
 	return _Abi.Contract.Refund(&_Abi.TransactOpts, preimageHash, amount, claimAddress, timelock)
+}
+
+// AbiChangeRefundIterator is returned from FilterChangeRefund and is used to iterate over the raw logs and unpacked data for ChangeRefund events raised by the Abi contract.
+type AbiChangeRefundIterator struct {
+	Event *AbiChangeRefund // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *AbiChangeRefundIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(AbiChangeRefund)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(AbiChangeRefund)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *AbiChangeRefundIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *AbiChangeRefundIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// AbiChangeRefund represents a ChangeRefund event raised by the Abi contract.
+type AbiChangeRefund struct {
+	Value *big.Int
+	Raw   types.Log // Blockchain specific contextual infos
+}
+
+// FilterChangeRefund is a free log retrieval operation binding the contract event 0x5b089f4746873d9e61e20908bcec0ab9b916b18894f34e506847aa1a18f98354.
+//
+// Solidity: event ChangeRefund(uint256 value)
+func (_Abi *AbiFilterer) FilterChangeRefund(opts *bind.FilterOpts) (*AbiChangeRefundIterator, error) {
+
+	logs, sub, err := _Abi.contract.FilterLogs(opts, "ChangeRefund")
+	if err != nil {
+		return nil, err
+	}
+	return &AbiChangeRefundIterator{contract: _Abi.contract, event: "ChangeRefund", logs: logs, sub: sub}, nil
+}
+
+// WatchChangeRefund is a free log subscription operation binding the contract event 0x5b089f4746873d9e61e20908bcec0ab9b916b18894f34e506847aa1a18f98354.
+//
+// Solidity: event ChangeRefund(uint256 value)
+func (_Abi *AbiFilterer) WatchChangeRefund(opts *bind.WatchOpts, sink chan<- *AbiChangeRefund) (event.Subscription, error) {
+
+	logs, sub, err := _Abi.contract.WatchLogs(opts, "ChangeRefund")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(AbiChangeRefund)
+				if err := _Abi.contract.UnpackLog(event, "ChangeRefund", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseChangeRefund is a log parse operation binding the contract event 0x5b089f4746873d9e61e20908bcec0ab9b916b18894f34e506847aa1a18f98354.
+//
+// Solidity: event ChangeRefund(uint256 value)
+func (_Abi *AbiFilterer) ParseChangeRefund(log types.Log) (*AbiChangeRefund, error) {
+	event := new(AbiChangeRefund)
+	if err := _Abi.contract.UnpackLog(event, "ChangeRefund", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
 }
 
 // AbiClaimIterator is returned from FilterClaim and is used to iterate over the raw logs and unpacked data for Claim events raised by the Abi contract.
@@ -495,6 +650,151 @@ func (_Abi *AbiFilterer) WatchClaim(opts *bind.WatchOpts, sink chan<- *AbiClaim,
 func (_Abi *AbiFilterer) ParseClaim(log types.Log) (*AbiClaim, error) {
 	event := new(AbiClaim)
 	if err := _Abi.contract.UnpackLog(event, "Claim", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// AbiClaimDocViaMintIterator is returned from FilterClaimDocViaMint and is used to iterate over the raw logs and unpacked data for ClaimDocViaMint events raised by the Abi contract.
+type AbiClaimDocViaMintIterator struct {
+	Event *AbiClaimDocViaMint // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *AbiClaimDocViaMintIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(AbiClaimDocViaMint)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(AbiClaimDocViaMint)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *AbiClaimDocViaMintIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *AbiClaimDocViaMintIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// AbiClaimDocViaMint represents a ClaimDocViaMint event raised by the Abi contract.
+type AbiClaimDocViaMint struct {
+	PreimageHash [32]byte
+	Preimage     [32]byte
+	Raw          types.Log // Blockchain specific contextual infos
+}
+
+// FilterClaimDocViaMint is a free log retrieval operation binding the contract event 0xe84c7e87cfb5d2a2c9dd4263e0c8942861dd96a78ec9b260a10c3588903e0832.
+//
+// Solidity: event ClaimDocViaMint(bytes32 indexed preimageHash, bytes32 preimage)
+func (_Abi *AbiFilterer) FilterClaimDocViaMint(opts *bind.FilterOpts, preimageHash [][32]byte) (*AbiClaimDocViaMintIterator, error) {
+
+	var preimageHashRule []interface{}
+	for _, preimageHashItem := range preimageHash {
+		preimageHashRule = append(preimageHashRule, preimageHashItem)
+	}
+
+	logs, sub, err := _Abi.contract.FilterLogs(opts, "ClaimDocViaMint", preimageHashRule)
+	if err != nil {
+		return nil, err
+	}
+	return &AbiClaimDocViaMintIterator{contract: _Abi.contract, event: "ClaimDocViaMint", logs: logs, sub: sub}, nil
+}
+
+// WatchClaimDocViaMint is a free log subscription operation binding the contract event 0xe84c7e87cfb5d2a2c9dd4263e0c8942861dd96a78ec9b260a10c3588903e0832.
+//
+// Solidity: event ClaimDocViaMint(bytes32 indexed preimageHash, bytes32 preimage)
+func (_Abi *AbiFilterer) WatchClaimDocViaMint(opts *bind.WatchOpts, sink chan<- *AbiClaimDocViaMint, preimageHash [][32]byte) (event.Subscription, error) {
+
+	var preimageHashRule []interface{}
+	for _, preimageHashItem := range preimageHash {
+		preimageHashRule = append(preimageHashRule, preimageHashItem)
+	}
+
+	logs, sub, err := _Abi.contract.WatchLogs(opts, "ClaimDocViaMint", preimageHashRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(AbiClaimDocViaMint)
+				if err := _Abi.contract.UnpackLog(event, "ClaimDocViaMint", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseClaimDocViaMint is a log parse operation binding the contract event 0xe84c7e87cfb5d2a2c9dd4263e0c8942861dd96a78ec9b260a10c3588903e0832.
+//
+// Solidity: event ClaimDocViaMint(bytes32 indexed preimageHash, bytes32 preimage)
+func (_Abi *AbiFilterer) ParseClaimDocViaMint(log types.Log) (*AbiClaimDocViaMint, error) {
+	event := new(AbiClaimDocViaMint)
+	if err := _Abi.contract.UnpackLog(event, "ClaimDocViaMint", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
@@ -659,6 +959,274 @@ func (_Abi *AbiFilterer) ParseLockup(log types.Log) (*AbiLockup, error) {
 	return event, nil
 }
 
+// AbiMintedIterator is returned from FilterMinted and is used to iterate over the raw logs and unpacked data for Minted events raised by the Abi contract.
+type AbiMintedIterator struct {
+	Event *AbiMinted // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *AbiMintedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(AbiMinted)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(AbiMinted)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *AbiMintedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *AbiMintedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// AbiMinted represents a Minted event raised by the Abi contract.
+type AbiMinted struct {
+	Value *big.Int
+	Raw   types.Log // Blockchain specific contextual infos
+}
+
+// FilterMinted is a free log retrieval operation binding the contract event 0x176b02bb2d12439ff7a20b59f402cca16c76f50508b13ef3166a600eb719354a.
+//
+// Solidity: event Minted(uint256 value)
+func (_Abi *AbiFilterer) FilterMinted(opts *bind.FilterOpts) (*AbiMintedIterator, error) {
+
+	logs, sub, err := _Abi.contract.FilterLogs(opts, "Minted")
+	if err != nil {
+		return nil, err
+	}
+	return &AbiMintedIterator{contract: _Abi.contract, event: "Minted", logs: logs, sub: sub}, nil
+}
+
+// WatchMinted is a free log subscription operation binding the contract event 0x176b02bb2d12439ff7a20b59f402cca16c76f50508b13ef3166a600eb719354a.
+//
+// Solidity: event Minted(uint256 value)
+func (_Abi *AbiFilterer) WatchMinted(opts *bind.WatchOpts, sink chan<- *AbiMinted) (event.Subscription, error) {
+
+	logs, sub, err := _Abi.contract.WatchLogs(opts, "Minted")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(AbiMinted)
+				if err := _Abi.contract.UnpackLog(event, "Minted", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseMinted is a log parse operation binding the contract event 0x176b02bb2d12439ff7a20b59f402cca16c76f50508b13ef3166a600eb719354a.
+//
+// Solidity: event Minted(uint256 value)
+func (_Abi *AbiFilterer) ParseMinted(log types.Log) (*AbiMinted, error) {
+	event := new(AbiMinted)
+	if err := _Abi.contract.UnpackLog(event, "Minted", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// AbiMintingIterator is returned from FilterMinting and is used to iterate over the raw logs and unpacked data for Minting events raised by the Abi contract.
+type AbiMintingIterator struct {
+	Event *AbiMinting // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *AbiMintingIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(AbiMinting)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(AbiMinting)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *AbiMintingIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *AbiMintingIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// AbiMinting represents a Minting event raised by the Abi contract.
+type AbiMinting struct {
+	Value *big.Int
+	Raw   types.Log // Blockchain specific contextual infos
+}
+
+// FilterMinting is a free log retrieval operation binding the contract event 0x867eb97d3472487867f1142a56e0853d70ef8258f4c73f7d515a4210045dda24.
+//
+// Solidity: event Minting(uint256 value)
+func (_Abi *AbiFilterer) FilterMinting(opts *bind.FilterOpts) (*AbiMintingIterator, error) {
+
+	logs, sub, err := _Abi.contract.FilterLogs(opts, "Minting")
+	if err != nil {
+		return nil, err
+	}
+	return &AbiMintingIterator{contract: _Abi.contract, event: "Minting", logs: logs, sub: sub}, nil
+}
+
+// WatchMinting is a free log subscription operation binding the contract event 0x867eb97d3472487867f1142a56e0853d70ef8258f4c73f7d515a4210045dda24.
+//
+// Solidity: event Minting(uint256 value)
+func (_Abi *AbiFilterer) WatchMinting(opts *bind.WatchOpts, sink chan<- *AbiMinting) (event.Subscription, error) {
+
+	logs, sub, err := _Abi.contract.WatchLogs(opts, "Minting")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(AbiMinting)
+				if err := _Abi.contract.UnpackLog(event, "Minting", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseMinting is a log parse operation binding the contract event 0x867eb97d3472487867f1142a56e0853d70ef8258f4c73f7d515a4210045dda24.
+//
+// Solidity: event Minting(uint256 value)
+func (_Abi *AbiFilterer) ParseMinting(log types.Log) (*AbiMinting, error) {
+	event := new(AbiMinting)
+	if err := _Abi.contract.UnpackLog(event, "Minting", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
 // AbiRefundIterator is returned from FilterRefund and is used to iterate over the raw logs and unpacked data for Refund events raised by the Abi contract.
 type AbiRefundIterator struct {
 	Event *AbiRefund // Event containing the contract specifics and raw log
@@ -797,6 +1365,140 @@ func (_Abi *AbiFilterer) WatchRefund(opts *bind.WatchOpts, sink chan<- *AbiRefun
 func (_Abi *AbiFilterer) ParseRefund(log types.Log) (*AbiRefund, error) {
 	event := new(AbiRefund)
 	if err := _Abi.contract.UnpackLog(event, "Refund", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// AbiTransferredDocIterator is returned from FilterTransferredDoc and is used to iterate over the raw logs and unpacked data for TransferredDoc events raised by the Abi contract.
+type AbiTransferredDocIterator struct {
+	Event *AbiTransferredDoc // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *AbiTransferredDocIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(AbiTransferredDoc)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(AbiTransferredDoc)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *AbiTransferredDocIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *AbiTransferredDocIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// AbiTransferredDoc represents a TransferredDoc event raised by the Abi contract.
+type AbiTransferredDoc struct {
+	Value *big.Int
+	Raw   types.Log // Blockchain specific contextual infos
+}
+
+// FilterTransferredDoc is a free log retrieval operation binding the contract event 0xade78c61bd38ba5e6104aa4db36526d71980db1f2d860531f78031507cc90b82.
+//
+// Solidity: event TransferredDoc(uint256 value)
+func (_Abi *AbiFilterer) FilterTransferredDoc(opts *bind.FilterOpts) (*AbiTransferredDocIterator, error) {
+
+	logs, sub, err := _Abi.contract.FilterLogs(opts, "TransferredDoc")
+	if err != nil {
+		return nil, err
+	}
+	return &AbiTransferredDocIterator{contract: _Abi.contract, event: "TransferredDoc", logs: logs, sub: sub}, nil
+}
+
+// WatchTransferredDoc is a free log subscription operation binding the contract event 0xade78c61bd38ba5e6104aa4db36526d71980db1f2d860531f78031507cc90b82.
+//
+// Solidity: event TransferredDoc(uint256 value)
+func (_Abi *AbiFilterer) WatchTransferredDoc(opts *bind.WatchOpts, sink chan<- *AbiTransferredDoc) (event.Subscription, error) {
+
+	logs, sub, err := _Abi.contract.WatchLogs(opts, "TransferredDoc")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(AbiTransferredDoc)
+				if err := _Abi.contract.UnpackLog(event, "TransferredDoc", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseTransferredDoc is a log parse operation binding the contract event 0xade78c61bd38ba5e6104aa4db36526d71980db1f2d860531f78031507cc90b82.
+//
+// Solidity: event TransferredDoc(uint256 value)
+func (_Abi *AbiFilterer) ParseTransferredDoc(log types.Log) (*AbiTransferredDoc, error) {
+	event := new(AbiTransferredDoc)
+	if err := _Abi.contract.UnpackLog(event, "TransferredDoc", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log

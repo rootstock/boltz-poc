@@ -181,7 +181,7 @@ func (rsk *RSK) GetTransactor(transactor func(key *ecdsa.PrivateKey, chainID *bi
 	}
 	auth.Nonce = big.NewInt(int64(nonce))
 	auth.Value = big.NewInt(0)     // in wei
-	auth.GasLimit = uint64(600000) // in units
+	auth.GasLimit = uint64(900000) // in units, todo(shree) increased this for mint Doc claim method
 	auth.GasPrice = gasPrice
 	return auth, nil
 }
