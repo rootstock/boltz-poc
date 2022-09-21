@@ -47,6 +47,8 @@ func (service *CheckoutService) CreateInvoice(request storage.PaymentRequest) (*
 		Preimage:     response.Preimage,
 		Invoice:      response.Invoice,
 		Amount:       request.Amount,
+		Status:       "New",
+		Tx:           "-",
 	})
 	return &Invoice{
 		Lninvoice: response.Invoice,

@@ -14,7 +14,7 @@ type Payment struct {
 	Invoice      string `db:"Invoice"`
 	Amount       int    `db:"Amount"`
 	Status       string `db:"Status"`
-	Tx           string `db:"Status"`
+	Tx           string `db:"Tx"`
 }
 
 type PaymentRequest struct {

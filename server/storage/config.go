@@ -48,7 +48,7 @@ LIMIT 1`
 func (db *DB) SetDefaultConfig() error {
 	defaultConf := &Config{
 		Key:   "swaptype",
-		Value: "liquidity",
+		Value: "mint", //"liquidity",
 	}
 	if res, _ := db.GetConfig(defaultConf.Key); res.Key == "" {
 		return db.SaveConfig(defaultConf)

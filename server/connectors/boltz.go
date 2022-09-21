@@ -295,7 +295,12 @@ func (boltz *Boltz) handleLockup(elog gethTypes.Log) ([]byte, error) {
 	// where is the gaslimit set (only in ../rsk.go?)
 	//auth.NoSend = true
 	//result, err := swapContract.AbiTransactor.Claim(auth, preimage, event.Amount, event.RefundAddress, event.Timelock)
-	result, err := swapContract.AbiTransactor.ClaimDoCViaMint(auth, preimage, event.Amount, common.HexToAddress(refundAddress), event.Timelock, new(big.Int).Div(event.Amount, big.NewInt(2)), event.ClaimAddress, event.ClaimAddress)
+	log.Debugf("Lockup preimage: %s", payment.Preimage)
+	log.Debugf("Lockup event.Amount: %s", event.Amount)
+	log.Debugf("Lockup event.RefundAddress: %s", event.RefundAddress)
+	log.Debugf("Lockup event.Timelock: %s", event.Timelock)
+	log.Debugf("Lockup event.ClaimAddress: %s", event.ClaimAddress)
+	result, err := swapContract.AbiTransactor.ClaimDoCViaMint(auth, preimage, event.Amount, event.RefundAddress, event.Timelock, new(big.Int).Div(event.Amount, big.NewInt(2)), event.ClaimAddress, event.ClaimAddress)
 
 	if err != nil {
 		log.Fatalf("Error executing claim tx: %v", err)

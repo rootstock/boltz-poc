@@ -20,6 +20,7 @@ services:
     depends_on:
       boltz-backend-setup:
         condition: service_healthy
+    entrypoint: ["/boltz-backend/bin/boltzd", "--configpath", "./boltz-backend/config.toml"]
   boltz-backend-setup:
     image: boltz/backend:latest
     container_name: boltz-backend-SETUP

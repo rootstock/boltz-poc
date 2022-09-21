@@ -5,7 +5,6 @@ import "math/big"
 type Config struct {
 	LogFile string
 	Debug   bool
-	ErpKeys []string
 
 	Server struct {
 		Port uint
@@ -18,9 +17,7 @@ type Config struct {
 		ChainId  *big.Int
 	}
 	Boltz struct {
-		Endpoint     string
-		AbiPath      string
-		ERC20AbiPath string
+		Endpoint string
 	}
 	Accounts struct {
 		RSK struct {
