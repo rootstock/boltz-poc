@@ -38,7 +38,7 @@ func (service *CheckoutService) CreateInvoice(request storage.PaymentRequest) (*
 		pair = "BTC/rBTC"
 	}
 
-	response, err := service.boltz.NewReverseSwap(pair, "sell", btcutil.Amount(request.Amount), "", nil)
+	response, err := service.boltz.NewReverseSwap(pair, "sell", btcutil.Amount(request.ProductId*2000), "", nil)
 	if err != nil {
 		return &Invoice{}, err
 	}
@@ -46,7 +46,8 @@ func (service *CheckoutService) CreateInvoice(request storage.PaymentRequest) (*
 		PreimageHash: response.PreimageHash,
 		Preimage:     response.Preimage,
 		Invoice:      response.Invoice,
-		Amount:       request.Amount,
+		Amount:       request.ProductId * 2000,
+		ProductId:    request.ProductId,
 		Status:       "New",
 		Tx:           "-",
 	})

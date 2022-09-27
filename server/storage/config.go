@@ -14,7 +14,8 @@ type Config struct {
 }
 
 type ConfigRequest struct {
-	Key int `json:"key"`
+	Key   string `json:"key"`
+	Value string `json:"Value"`
 }
 
 const createConfigTable = `
@@ -34,6 +35,10 @@ VALUES (
 	:Value
 )
 `
+
+const updateConfig = `
+UPDATE config SET  Value = :Value
+Where Key = :Key`
 
 const getConfigs = `
 SELECT *
@@ -57,14 +62,26 @@ func (db *DB) SetDefaultConfig() error {
 }
 
 func (db *DB) SaveConfig(conf *Config) error {
-	log.Debug("inserting config{", conf.Key, " - ", conf.Value, "}")
-	query, args, _ := sqlx.Named(insertConfig, conf)
-	_, err := db.db.Exec(query, args...)
+	exist, err := db.GetConfig(conf.Key)
 	if err != nil {
-		log.Error("Error inserting config", err)
+		log.Error("Error saving config", err)
 		return err
 	}
-	log.Debug("success inserting config!")
+	var queryString string
+	if (exist != Config{}) {
+		log.Debug("updating config{", conf.Key, "}", ": ", conf)
+		queryString = updateConfig
+	} else {
+		log.Debug("inserting config{", conf.Key, "}", ": ", conf)
+		queryString = insertConfig
+	}
+	query, args, _ := sqlx.Named(queryString, conf)
+	_, err = db.db.Exec(query, args...)
+	if err != nil {
+		log.Error("Error saving config", err)
+		return err
+	}
+	log.Debug("success saving config!")
 	return nil
 }
 

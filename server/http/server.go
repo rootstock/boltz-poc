@@ -38,19 +38,21 @@ type Server struct {
 	rsk      connectors.RSKConnector
 	db       storage.DBConnector
 	checkout *services.CheckoutService
+	config   *services.ConfigService
 	now      func() time.Time
 }
 
-func New(boltz connectors.BoltzConnector, rsk connectors.RSKConnector, db storage.DBConnector, checkout *services.CheckoutService) Server {
-	return newServer(boltz, rsk, db, checkout, time.Now)
+func New(boltz connectors.BoltzConnector, rsk connectors.RSKConnector, db storage.DBConnector, checkout *services.CheckoutService, config *services.ConfigService) Server {
+	return newServer(boltz, rsk, db, checkout, config, time.Now)
 }
 
-func newServer(boltz connectors.BoltzConnector, rsk connectors.RSKConnector, db storage.DBConnector, checkout *services.CheckoutService, now func() time.Time) Server {
+func newServer(boltz connectors.BoltzConnector, rsk connectors.RSKConnector, db storage.DBConnector, checkout *services.CheckoutService, config *services.ConfigService, now func() time.Time) Server {
 	return Server{
 		boltz:    boltz,
 		rsk:      rsk,
 		db:       db,
 		checkout: checkout,
+		config:   config,
 		now:      now,
 	}
 }

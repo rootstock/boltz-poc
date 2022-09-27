@@ -13,12 +13,13 @@ type Payment struct {
 	Preimage     string `db:"Preimage"`
 	Invoice      string `db:"Invoice"`
 	Amount       int    `db:"Amount"`
+	ProductId    int    `db:"ProductId"`
 	Status       string `db:"Status"`
 	Tx           string `db:"Tx"`
 }
 
 type PaymentRequest struct {
-	Amount int `json:"amount"`
+	ProductId int `json:"productId"`
 }
 
 const createPaymentTable = `
@@ -27,6 +28,7 @@ CREATE TABLE IF NOT EXISTS payment (
 	Preimage TEXT,
 	Invoice TEXT,
 	Amount NUMBER,
+	ProductId NUMBER,
 	Status TEXT,
 	Tx TEXT
 )
@@ -38,6 +40,7 @@ INSERT INTO payment (
 	Preimage,
 	Invoice,
 	Amount,
+	ProductId,
 	Status,
 	Tx
 )
@@ -46,6 +49,7 @@ VALUES (
 	:Preimage,
 	:Invoice,
 	:Amount,
+	:ProductId,
 	:Status,
 	:Tx
 )

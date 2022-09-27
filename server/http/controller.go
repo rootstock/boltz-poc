@@ -22,9 +22,12 @@ func Controller(s *Server) *mux.Router {
 	r.Path("/health").Methods(http.MethodGet).HandlerFunc(wrap(checkHealthHandler, s))
 	r.Path("/payment/").Methods(http.MethodGet, http.MethodOptions).HandlerFunc(wrap(getPayments, s))
 	r.Path("/payment/{id}").Methods(http.MethodGet, http.MethodOptions).HandlerFunc(wrap(getPayments, s))
+	r.Path("/config/").Methods(http.MethodGet, http.MethodOptions).HandlerFunc(wrap(getConfigs, s))
+	r.Path("/config/{id}").Methods(http.MethodGet, http.MethodOptions).HandlerFunc(wrap(getConfigs, s))
 
 	// POST
 	r.Path("/payment").Methods(http.MethodPost, http.MethodOptions).HandlerFunc(wrap(createPayment, s))
+	r.Path("/config").Methods(http.MethodPost, http.MethodOptions).HandlerFunc(wrap(saveConfig, s))
 
 	r.Use(corsMw)
 	return r
@@ -55,6 +58,28 @@ func createPayment(s *Server, r *http.Request) (any, error) {
 		return nil, err
 	}
 	return s.checkout.CreateInvoice(request)
+}
+
+func saveConfig(s *Server, r *http.Request) (any, error) {
+	request := storage.ConfigRequest{}
+	dec := json.NewDecoder(r.Body)
+	dec.DisallowUnknownFields()
+	if err := dec.Decode(&request); err != nil {
+		return nil, err
+	}
+	return s.config.SaveConfig(&storage.Config{
+		Key:   request.Key,
+		Value: request.Value,
+	})
+}
+
+func getConfigs(s *Server, r *http.Request) (any, error) {
+	vars := mux.Vars(r)
+	key := vars["id"]
+	if len(key) > 0 {
+		return s.config.GetConfig(key)
+	}
+	return s.config.GetConfigs()
 }
 
 func checkHealthHandler(s *Server, r *http.Request) (any, error) {

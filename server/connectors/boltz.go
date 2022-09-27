@@ -218,10 +218,11 @@ func (boltz *Boltz) createReverseSwap(pairId string, orderSide string, amt int64
 		PairID        string `json:"pairId"`
 		OrderSide     string `json:"orderSide"`
 		InvoiceAmount int64  `json:"invoiceAmount"`
-		PreimageHash  string `json:"preimageHash"`
-		PairHash      string `json:"pairHash,omitempty"`
-		ClaimAddress  string `json:"claimAddress"` //ClaimPublicKey string `json:"claimPublicKey"`
-		RoutingNode   string `json:"routingNode,omitempty"`
+		//OnchainAmount int64  `json:"onchainAmount"`
+		PreimageHash string `json:"preimageHash"`
+		PairHash     string `json:"pairHash,omitempty"`
+		ClaimAddress string `json:"claimAddress"` //ClaimPublicKey string `json:"claimPublicKey"`
+		RoutingNode  string `json:"routingNode,omitempty"`
 	}{
 		Type:          "reversesubmarine",
 		PairID:        pairId,

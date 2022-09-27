@@ -47,9 +47,9 @@ func initLogger() {
 	}
 }
 
-func startServer(boltz *connectors.Boltz, rsk *connectors.RSK, db *storage.DB, checkout *services.CheckoutService) {
+func startServer(boltz *connectors.Boltz, rsk *connectors.RSK, db *storage.DB, checkout *services.CheckoutService, configService *services.ConfigService) {
 
-	srv = http.New(boltz, rsk, db, checkout)
+	srv = http.New(boltz, rsk, db, checkout, configService)
 	log.Debug("registering server (this might take a while)")
 	port := cfg.Server.Port
 
@@ -104,13 +104,14 @@ func main() {
 	}
 	log.Debugln("Initialized Boltz client.")
 
-	// INIT Checkout
+	// INIT Services
 	checkout := services.NewCheckoutService(cfg, boltz, db)
+	configService := services.NewConfigService(cfg, boltz, db)
 
 	done := make(chan os.Signal, 1)
 	signal.Notify(done, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
 
-	startServer(boltz, rsk, db, checkout)
+	startServer(boltz, rsk, db, checkout, configService)
 
 	<-done
 
